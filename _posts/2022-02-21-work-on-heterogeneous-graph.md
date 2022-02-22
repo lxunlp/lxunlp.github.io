@@ -8,14 +8,14 @@ tags:
   - graph
 ---
 
-### GNN Basics
+## GNN Basics
 
 Ways of node updating: (1) simply use aggregated (with self connection) (2) simply add residual connection (3) use
 gating (4) use FFNN on [old; new].
 
 Multiple iterations/propagation: higher-order/multi-hops. However, if complete-graph, then no need to do higher-order.
 
-### Add More Nodes (of Different Types) as Heterogeneous
+## Add More Nodes (of Different Types) as Heterogeneous
 
 **Connecting the Dots: Document-level Neural Relation Extraction with Edge-oriented Graphs**. Christopoulou et al. EMNLP'19\
 Add and connect latent nodes of different types: entities, sentences; then perform graph propagation. Added latent nodes only serve for information flow (better original node updating), and won't be used for final classification directly.\
@@ -35,7 +35,7 @@ Kurohashi. EACL'21\
 Add and connect latent nodes of different types: discourse units, coreferent entities, sentences; then perform graph propagation.\
 https://aclanthology.org/2021.eacl-main.265
 
-### Same Nodes with Different Subgraphs as Heterogeneous
+## Same Nodes with Different Subgraphs as Heterogeneous
 
 **Heterogeneous Graph Transformer for Graph-to-Sequence Learning**. Yao et al. ACL'20\
 Decompose original graphs into different subgraphs and perform graph propagation for each subgraph. Then, concat each node repr of different subgraphs and then transform to a single node repr.\
