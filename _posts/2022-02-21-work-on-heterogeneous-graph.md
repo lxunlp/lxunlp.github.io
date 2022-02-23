@@ -2,7 +2,7 @@
 title: "Work on Heterogeneous Graph"
 date: 2022-02-21
 categories:
-  - blog
+  - Blog
 tags:
   - NLP
   - graph
