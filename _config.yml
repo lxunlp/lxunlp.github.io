@@ -60,9 +60,9 @@ author:
   avatar : "/assets/images/avatar.jpeg"
   bio    : "Note taking."
   links:
-    - label: "Google Scholar"
-      icon: "fas fa-fw fa-link"
-      url: "https://scholar.google.com/citations?user=4mx32ogAAAAJ"
+#    - label: "Google Scholar"
+#      icon: "fas fa-fw fa-link"
+#      url: "https://scholar.google.com/citations?user=4mx32ogAAAAJ"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/lxunlp"
