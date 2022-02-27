@@ -183,6 +183,7 @@ Evaluation: different setup, one-to-many, many-to-one, many-to-many pairs.\
 
 **Massively Multilingual Neural Machine Translation**. Aharoni et al. NAACL'19\
 Target on supervised joint multilingual MT: use same model as Johnson'17, scale up to 100+ languages. Evaluate many-to-many, one-to-many, many-to-one performance under different conditions (# languages involved).\
+<https://aclanthology.org/N19-1388/>
 
 **UNSUPERVISED MACHINE TRANSLATION USING MONOLINGUAL CORPORA ONLY**. Lample et al. ICLR'18\
 Target on unsupervised MT: also propose unsupervised model selection.\
