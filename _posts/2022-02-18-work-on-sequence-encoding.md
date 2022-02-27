@@ -73,6 +73,9 @@ Enable long sequence at thousands level (either MLM or auto-regressive): (1) use
 **Linformer: Self-Attention with Linear Complexity**. Wang et al. 2020\
 <https://arxiv.org/abs/2006.04768>
 
+**Big Bird: Transformers for Longer Sequences**. Zaheer et al. NIPS'20\
+<https://arxiv.org/abs/2007.14062>
+
 **Informer: Beyond Efficient Transformer for Long Sequence Time-Series Forecasting**. Zhou et al. AAAI'21\
 <https://arxiv.org/abs/2012.07436>
 
