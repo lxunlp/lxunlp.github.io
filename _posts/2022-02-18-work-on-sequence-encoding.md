@@ -42,39 +42,58 @@ Better for span-selection tasks such as extractive QA or coreference resolution:
 More efficient pre-training objective: a discriminator to predict whether a token is replaced with a plausible alternative by a small MLM model (generator). Although similar to GAN, generator is trained independently. More efficient since prediction is on all tokens, leading to better performance under the same condition compared with MLM.\
 <https://arxiv.org/pdf/2003.10555.pdf>
 
+**Unified Language Model Pre-training for Natural Language Understanding and Generation**. Dong et al. NIPS'19\
+Handle both NLU and generation.\
+Decoder pretraining: recover only the corrupted span.
+<https://arxiv.org/pdf/1905.03197.pdf>
+
+**UNILMv2: Pseudo-Masked Language Models for Unified Language Model Pre-Training**. Bao et al. 2020\
+<https://arxiv.org/abs/2002.12804>
+
 **BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension**. Lewis et al. 2019\
-Pretrain S2S, with MLM on encoder and auto-regressive on decoder. Better for generation tasks.\
+Combining denoising encoder and auto-regressive decoder. Better for generation tasks.\
+Pretraining: recover the ENTIRE corrupted input sequence (unlike UniLM or T5).\
 <https://arxiv.org/abs/1910.13461>
 
 **Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer**. Raffel et al. JMLR'20\
-Pretrain S2S and cast different downstream tasks as generation tasks.\
-Pretraining objective: see Section 3.3\
+The T5 model. Cast different downstream tasks as S2S generation tasks.\
+Pretraining objective: can recover the entire sequence or only corrupted span (Figure 5). Authors find only recovering corrupted span performs good.\
 <https://arxiv.org/abs/1910.10683>
 
 ## For Long Sequence
 
 **Transformer-XL: Attentive Language Models beyond a Fixed-Length Context**. Dai et al. ACL'19\
+Recurrent-based.\
 Encode variable length input (auto-regressive): use a fixed-length Transformers segment and apply recurrence on the input; utilize relative position in self-attention to address cross-segment distance.\
 <https://www.aclweb.org/anthology/P19-1285>
 
 **XLNet: Generalized Autoregressive Pretraining for Language Understanding**. Yang et al. NeurIPS'19\
+Recurrent-based.\
 Enhanced model upon Transformer-XL: use Permutation Language Modeling in auto-regressive LM but with permuted sequence to encode bidirectionally. Also some adaptations in the implementation to cope with permutation.\
 <https://arxiv.org/pdf/1906.08237.pdf>
 
 **Reformer: The Efficient Transformer**. Kitaev et al. ICLR'20\
+Bucket-based.\
 Encode large sequence (auto-regressive): (1) use shared QK matrices (2) use Locality Sensitive Hashing (LSH) in the self-attention, to approximately find a subset of K with high prob on Q, without computing full QK (3) use reversible residual connections in the attention and feedforward layer to eliminate full copy of forward values for back-propagation.\
 Ablations: (1) reversible layers do not really hurt performance (2) hash bucket size is a trade-off between performance and complexity.\
 <https://arxiv.org/abs/2001.04451>
 
 **Longformer: The Long-Document Transformer**. Beltagy et al. 2020\
+Window-based.\
 Enable long sequence at thousands level (either MLM or auto-regressive): (1) use sliding-window local attention (similar to CNN), therefore $O(n)$ instead of $O(n^2)$; full attention is implicitly obtained by stacking layers; varying window size and dilation at each layer (2) task specific global attention (viewed as constant).\
 <https://arxiv.org/abs/2004.05150>
 
 **Linformer: Self-Attention with Linear Complexity**. Wang et al. 2020\
+Low-rank on attention.\
 <https://arxiv.org/abs/2006.04768>
 
 **Big Bird: Transformers for Longer Sequences**. Zaheer et al. NIPS'20\
+Window-based.\
 <https://arxiv.org/abs/2007.14062>
+
+**Poolingformer: Long Document Modeling with Pooling Attention**. Zhang et al. ICML'21\
+Window-based.\
+<https://arxiv.org/abs/2105.04371>
 
 **Informer: Beyond Efficient Transformer for Long Sequence Time-Series Forecasting**. Zhou et al. AAAI'21\
 <https://arxiv.org/abs/2012.07436>

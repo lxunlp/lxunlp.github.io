@@ -32,6 +32,11 @@ Finding: ConveRT and TOD-BERT-jnt perform the best.\
 Question: freeze CLS or not??\
 <https://www.aclweb.org/anthology/2020.emnlp-main.409>
 
+**DIALOGLM: Pre-trained Model for Long Dialogue Understanding and Summarization**. Zhong et al. AAAI'22\
+Similar to BART or UniLM on dialogue domain for generation tasks, and introduce dialogue-specific corruption.\
+Sparse attention for long sequence helps little.\
+<https://arxiv.org/pdf/2109.02492.pdf>
+
 ## Downstream Tasks (Non-Generation)
 
 **Dialogue-Based Relation Extraction**. Yu et al. ACL'20\
