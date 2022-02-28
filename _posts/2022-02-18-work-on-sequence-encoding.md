@@ -124,11 +124,16 @@ User-specified number of pruned heads.\
 ## For Incorporating Knowledge
 
 **ERNIE: Enhanced Language Representation with Informative Entities**. Zhang et al. ACL'19\
+Fuse entity embedding.\
 <https://arxiv.org/abs/1905.07129>
 
 **K-BERT: Enabling Language Representation with Knowledge Graph**. Liu et al. AAAI'20\
 Inject triplets into the sequence with soft position embedding and masked attention.\
 <https://arxiv.org/abs/1909.07606>
+
+**DKPLM: Decomposable Knowledge-enhanced Pre-trained Language Model for Natural Language Understanding**. Zhang et al. AAAI'22\
+Inject by replacing entity with repr of lexical head/tail/relation and entity description (no need to require separate KG embedding).\
+<https://arxiv.org/pdf/2112.01047>
 
 ## Recent Survey
 

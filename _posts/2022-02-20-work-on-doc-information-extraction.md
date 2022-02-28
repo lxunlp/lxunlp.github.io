@@ -10,7 +10,7 @@ tags:
 
 ---
 
-## Task: Doc-Level RE
+# Task: Doc-Level RE
 
 **DocRED: A Large-Scale Document-Level Relation Extraction Dataset**. Yao et al. ACL'19\
 Multi-label classification on entity-pair. Predicting: bilinear on entity pair\
@@ -204,3 +204,10 @@ Entity-centric n-ary relation extraction.\
 **Enhancing Dialogue-based Relation Extraction by Speaker and Trigger Words Prediction**. Zhao et al. ACL Findings'21\
 On DialogRE.\
 <https://aclanthology.org/2021.findings-acl.402>
+
+# KG Completion
+
+**Inductive Relation Prediction by BERT**. Zha et al. AAAI'22\
+Linearize each local subgraph individually and encode by BERT, paired with target triple to do MIL scoring.\
+Thereafter to achieve both semantic representation and implicit rule inference.
+<https://arxiv.org/pdf/2103.07102>

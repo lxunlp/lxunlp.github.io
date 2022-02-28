@@ -333,6 +333,10 @@ Frame as QA, a span prediction problem given two input. Use basic span predictio
 MT application on IR. Conclusion: (1) NMT is better than SMT (2) Query Translation (QT) is much better than Document Translation (DT).\
 <https://www.aclweb.org/anthology/2020.acl-main.613/>
 
+**Mind the Gap: Cross-Lingual Information Retrieval with Hierarchical Knowledge Enhancement**. Zhang et al. AAAI'22\
+Use neighboring entities of multilingual KG to enrich cross-lingual query-pair representation on mBERT.\
+<https://arxiv.org/pdf/2112.13510>
+
 **Cross-lingual Structure Transfer for Relation and Event Extraction**. Subburathinam et al. EMNLP'19\
 Use POS and parsing features with GCN on zero-shot extraction task.\
 <https://www.aclweb.org/anthology/D19-1030/>
