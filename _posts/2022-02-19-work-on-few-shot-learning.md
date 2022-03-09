@@ -69,3 +69,9 @@ General cross-lingual transfer: apply metric-based meta-learning in downstream t
 **Zero-Shot Cross-Lingual Transfer with Meta Learning**. Nooralahzadeh et al. EMNLP'20\
 General cross-lingual transfer: apply optimization-based meta-learning to learn the parameters that can be finetuned rapidly on different languages.\
 <https://www.aclweb.org/anthology/2020.emnlp-main.368>
+
+**ContrastNet: A Contrastive Learning Framework for Few-shot Text Classification**. Chen et al. AAAI'22\ 
+Main (supervised): pull same class instances together among $Q$ and $S$ (cluster by labels).\
+Reg (unsupervised)?: (1) push difference tasks/classes separated from each other (2) push repr distant from each other.\
+Inference: nearest-neighbor on entire $S$ (similar to Siamese).\
+<https://aaai-2022.virtualchair.net/poster_aaai10254>

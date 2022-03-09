@@ -189,7 +189,17 @@ Findings'21\
 TODO\
 <https://aclanthology.org/2021.findings-acl.117>
 
-## Approach: for n-ary RE
+# Task: for other Datasets
+
+**Enhancing Dialogue-based Relation Extraction by Speaker and Trigger Words Prediction**. Zhao et al. ACL Findings'21\
+On DialogRE.\
+<https://aclanthology.org/2021.findings-acl.402>
+
+**Selecting Optimal Context Sentences for Event-Event Relation Extraction**. Trong et al. AAAI'22\
+Pairwise scoring on given event spans: use REINFORCE to select important sentences and compress documents.\
+<https://www.aaai.org/AAAI22Papers/AAAI-3912.ManH.pdf>
+
+# Task: n-ary RE
 
 **Cross-Sentence N-ary Relation Extraction with Graph LSTMs**. Peng et al. TACL'17\
 TODO\
@@ -199,15 +209,19 @@ TODO\
 Entity-centric n-ary relation extraction.\
 <https://aclanthology.org/N19-1370/>
 
-## Approach: for Other Datasets
+# Task: Open-IE
 
-**Enhancing Dialogue-based Relation Extraction by Speaker and Trigger Words Prediction**. Zhao et al. ACL Findings'21\
-On DialogRE.\
-<https://aclanthology.org/2021.findings-acl.402>
+**OpenIE6: Iterative Grid Labeling and Coordination Analysis for Open Information Extraction**. Kolluru et al. EMNLP'20\
+<https://aclanthology.org/2020.emnlp-main.306/>
 
-# KG Completion
+**Multi2OIE: Multilingual Open Information Extraction Based on Multi-Head Attention with BERT**. Ro et al. EMNLP Findings'20\
+<https://arxiv.org/abs/2009.08128>
+
+**DetIE: Multilingual Open Information Extraction Inspired by Object Detection**. Vasilkovsky et al. AAAI'22\
+
+# Task: KG Completion
 
 **Inductive Relation Prediction by BERT**. Zha et al. AAAI'22\
 Linearize each local subgraph individually and encode by BERT, paired with target triple to do MIL scoring.\
-Thereafter to achieve both semantic representation and implicit rule inference.
+Thereafter to achieve both semantic representation and implicit rule inference.\
 <https://arxiv.org/pdf/2103.07102>
