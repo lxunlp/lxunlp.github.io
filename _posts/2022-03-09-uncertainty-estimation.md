@@ -28,9 +28,7 @@ $$
 Instead of a single model, regard the model parameter $\theta$ as a posterior distribution given the observed data $D$.
 Therefore, the predicted output is also marginalized over the model posteriori, which should gives more accurate prediction and uncertainty estimation.
 
-$$
-p(y|x, D) = \int_{\theta} p \big(y|f^{\theta}(x) \big) p(\theta|D) d\theta
-$$
+$$p(y|x, D) = \int_{\theta} p \big(y|f^{\theta}(x) \big) p(\theta|D) d\theta$$
 
 Analytically, we usually parameterize the model posteriori $p(\theta|D)$ by a simple distribution such as Gaussian to perform tractable variational inference.
 
@@ -78,7 +76,7 @@ $$\begin{align}
 \mathrm{Var}^{\text{model}} (y) &= \mathrm{E}[(y - \mu)^2]\\
 &= \mathrm{E} [(y - \mathrm{E}[x])^2]\\
 &= \mathrm{E}[y^2] - E[y]^2\\
-&= \frac{1}{m}\sum_{\theta} y^2 - (\frac{1}{m}\sum_{\theta} y)^2 \quad \text{Dropout Monte-Carlo on }\theta
+&= \frac{1}{m}\sum_{\theta} y^2 - (\frac{1}{m}\sum_{\theta} y)^2 \quad \text{Monte-Carlo Dropout on }\theta
 \end{align}
 $$
 
@@ -92,9 +90,13 @@ Let $\sigma^{\theta}_y$ be the predicted data variance for output $y$ by the mod
 
 $$\begin{align}
 \mathrm{Var}(y) &= \mathrm{Var}^{\text{model}} (y) + \mathrm{Var}^{\text{data}} (y) \\
-&= \underbrace{\frac{1}{m}\sum_{\theta} y^2 - (\frac{1}{m}\sum_{\theta} y)^2}_{\text{Model Variance}} + \underbrace{\frac{1}{m}\sum^{\theta}_y \sigma^{\theta}}_{\text{Expected Data Variance}}
+&= \underbrace{\frac{1}{m}\sum_{\theta} y^2 - (\frac{1}{m}\sum_{\theta} y)^2}_{\text{Model Variance by Dropout}} + \underbrace{\frac{1}{m}\sum^{\theta}_y \sigma^{\theta}}_{\text{Predicted Data Variance}}
 \end{align}
 $$
+
+Depending on interests, we don't have to address both model and data variance.
+* Only address model variance: obtain final uncertainty by simply performing Monte-Carlo Dropout
+* Only address data variance: obtain final uncertainty by using a single model to only predict $\sigma$ (discard BNN)
 
 # Related Work
 
