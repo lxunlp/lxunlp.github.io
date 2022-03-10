@@ -18,6 +18,6 @@ Uncertainty: $\approx$ total variance on output
 ### Basic
 
 $$\begin{align}
-\Var (X)
+\text{Var} (X) = 
 \end{align}
 $$
