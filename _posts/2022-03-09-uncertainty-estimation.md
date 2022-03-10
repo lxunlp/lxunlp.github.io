@@ -18,8 +18,8 @@ Uncertainty: $\approx$ total variance on output
 ### Basic
 
 $$\begin{align}
-\mathrm{Var} (X) &= \mathrm{E}[(X - \mu)^2]\
-&= \mathrm{E} [(X - \mathrm{E}[X])^2]\
+\mathrm{Var} (X) &= \mathrm{E}[(X - \mu)^2]\\
+&= \mathrm{E} [(X - \mathrm{E}[X])^2]\\
 &= \mathrm{E}[X^2] - E[X]^2
 \end{align}
 $$
