@@ -30,7 +30,7 @@ Therefore, the predicted output is also marginalized over the model posteriori, 
 
 $$p(y|x, D) = \int_{\theta} p \big(y|f^{\theta}(x) \big) p(\theta|D) d\theta$$
 
-Analytically, we usually parameterize the model posteriori $p(\theta|D)$ by a simple distribution such as Gaussian to perform tractable variational inference.
+Analytically, we usually parameterize the model posteriori by a simple distribution such as Gaussian to perform tractable variational inference.
 
 Note that **above BNN mainly addresses the model uncertainty**.
 Be sure to distinguish model uncertainty and predictive/output uncertainty. The latter is the final output uncertainty which is partially determined by the model uncertainty.
