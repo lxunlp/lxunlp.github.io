@@ -74,7 +74,7 @@ The calculation can be done as:
 
 $$\begin{align}
 \mathrm{Var}^{\text{model}} (y) &= \mathrm{E}[(y - \mu)^2]\\
-&= \mathrm{E} [(y - \mathrm{E}[x])^2]\\
+&= \mathrm{E} [(y - \mathrm{E}[y])^2]\\
 &= \mathrm{E}[y^2] - E[y]^2\\
 &= \frac{1}{m}\sum_{\theta} y^2 - (\frac{1}{m}\sum_{\theta} y)^2 \quad \text{Monte-Carlo Dropout on }\theta
 \end{align}
@@ -84,13 +84,15 @@ $$
 
 Kendall'17/'18' propose to let the model predict the data variance (assuming Gaussian distribution on prediction) along with the value. See details in the papers.
 
+Some other work also proposes different estimation formulation such as evidential uncertainty. Details in papers.
+
 ### Together
 
 Let $\sigma^{\theta}_y$ be the predicted data variance for output $y$ by the model with parameter $\theta$.
 
 $$\begin{align}
 \mathrm{Var}(y) &= \mathrm{Var}^{\text{model}} (y) + \mathrm{Var}^{\text{data}} (y) \\
-&= \underbrace{\frac{1}{m}\sum_{\theta} y^2 - (\frac{1}{m}\sum_{\theta} y)^2}_{\text{Model Variance by Dropout}} + \underbrace{\frac{1}{m}\sum^{\theta}_y \sigma^{\theta}}_{\text{Predicted Data Variance}}
+&= \underbrace{\frac{1}{m}\sum_{\theta} y^2 - (\frac{1}{m}\sum_{\theta} y)^2}_{\text{Model Variance by Dropout}} \quad + \underbrace{\frac{1}{m}\sum^{\theta} \sigma^{\theta}_y}_{\text{Predicted Data Variance}}
 \end{align}
 $$
 
