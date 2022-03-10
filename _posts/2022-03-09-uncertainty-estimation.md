@@ -9,25 +9,27 @@ tags:
 
 ---
 
+## Basic
+
 ### MAP
 
-See previous post.
+Let $D$ be the observed data. See previous post.
 
 $$
 \begin{align}
-\theta_{MAP} &= \text{argmax}_{\theta} \; \log P(\theta|X) \\
-&= \text{argmax}_{\theta} \; \log P(X|\theta) P(\theta)\\
-&= \text{argmax}_{\theta} \; \underbrace{\sum_i \log P(x_i|\theta)}_{MLE} + \underbrace{\log P(\theta)}_{\text{Priori}}
+\theta_{MAP} &= \text{argmax}_{\theta} \; \log P(\theta|D) \\
+&= \text{argmax}_{\theta} \; \log P(D|\theta) P(\theta)\\
+&= \text{argmax}_{\theta} \; \underbrace{\sum_i \log P(d_i|\theta)}_{MLE} + \underbrace{\log P(\theta)}_{\text{Priori}}
 \end{align}
 $$
 
 ### BNN
 
-Instead of a single model, regard the model as a posterior distribution given the observed data $X$. Therefore, the predicted output is also marginalized over the model posteriori, which should gives more accurate prediction and uncertainty estimation.
+Instead of a single model, regard the model parameter $\theta$ as a posterior distribution given the observed data $D$. Therefore, the predicted output is also marginalized over the model posteriori, which should gives more accurate prediction and uncertainty estimation.
 
-$$p(y|x) = \int_{\theta} p(y|f^{\theta}(x)) p(\theta) d\theta$$
+$$p(y|x, D) = \int_{\theta} p \big(y|f^{\theta}(x) \big) p(\theta|D) d\theta$$
 
-## Basic
+## Uncertainty
 
 [Law of total variance](https://en.wikipedia.org/wiki/Law_of_total_variance): with random variable $X$ and $Y$, the variance of $Y$ can be decomposed as:
 
@@ -43,17 +45,3 @@ $$\begin{align}
 &= \mathrm{E}[x^2] - E[x]^2
 \end{align}
 $$
-
-### MAP
-
-See previous post.
-
-$$
-\begin{align}
-\theta_{MAP} &= \text{argmax}_{\theta} \; \log P(\theta|X) \\
-&= \text{argmax}_{\theta} \; \log P(X|\theta) P(\theta)\\
-&= \text{argmax}_{\theta} \; \underbrace{\sum_i \log P(x_i|\theta)}_{MLE} + \underbrace{\log P(\theta)}_{\text{Priori}}
-\end{align}
-$$
-
-
