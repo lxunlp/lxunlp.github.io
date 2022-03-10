@@ -9,6 +9,24 @@ tags:
 
 ---
 
+### MAP
+
+See previous post.
+
+$$
+\begin{align}
+\theta_{MAP} &= \text{argmax}_{\theta} \; \log P(\theta|X) \\
+&= \text{argmax}_{\theta} \; \log P(X|\theta) P(\theta)\\
+&= \text{argmax}_{\theta} \; \underbrace{\sum_i \log P(x_i|\theta)}_{MLE} + \underbrace{\log P(\theta)}_{\text{Priori}}
+\end{align}
+$$
+
+### BNN
+
+Instead of a single model, regard the model as a posterior distribution given the observed data $X$. Therefore, the predicted output is also marginalized over the model posteriori, which should gives more accurate prediction and uncertainty estimation.
+
+$$p(y|x) = \int_{\theta} p(y|f^{\theta}(x)) p(\theta) d\theta$$
+
 ## Basic
 
 [Law of total variance](https://en.wikipedia.org/wiki/Law_of_total_variance): with random variable $X$ and $Y$, the variance of $Y$ can be decomposed as:
@@ -20,9 +38,9 @@ Therefore, output uncertainty can be explained by (1) variance from model parame
 ### Variance $\sigma^2$
 
 $$\begin{align}
-\mathrm{Var} (X) &= \mathrm{E}[(X - \mu)^2]\\
-&= \mathrm{E} [(X - \mathrm{E}[X])^2]\\
-&= \mathrm{E}[X^2] - E[X]^2
+\mathrm{Var} (x) &= \mathrm{E}[(x - \mu)^2]\\
+&= \mathrm{E} [(x - \mathrm{E}[x])^2]\\
+&= \mathrm{E}[x^2] - E[x]^2
 \end{align}
 $$
 
@@ -34,10 +52,8 @@ $$
 \begin{align}
 \theta_{MAP} &= \text{argmax}_{\theta} \; \log P(\theta|X) \\
 &= \text{argmax}_{\theta} \; \log P(X|\theta) P(\theta)\\
-&= \text{argmax}_{\theta} \; \underbrace{\sum_i \log P(x_i|\theta)}_{MLE} + \log P(\theta)
+&= \text{argmax}_{\theta} \; \underbrace{\sum_i \log P(x_i|\theta)}_{MLE} + \underbrace{\log P(\theta)}_{\text{Priori}}
 \end{align}
 $$
-
-### BNN
 
 
