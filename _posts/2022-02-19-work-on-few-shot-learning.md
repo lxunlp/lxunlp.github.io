@@ -1,5 +1,5 @@
 ---
-title: "Work on Few-Shot Learning and Meta Learning"
+title: "Work on Few-Shot, Meta Learning and Semi-Supervised Learning"
 date: 2022-02-19
 categories:
   - Blog
@@ -54,6 +54,8 @@ Relation network: combine Siamese network and Prototypical network: (1) learn th
 
 **On First-Order Meta-Learning Algorithms**. Nichol et al. 2018\
 <https://arxiv.org/abs/1803.02999>
+
+## Self-Learning (Pseudo Label)
 
 ## in NLP Venue
 
