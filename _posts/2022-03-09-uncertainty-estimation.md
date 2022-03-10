@@ -31,7 +31,7 @@ $$p(y|x, D) = \int_{\theta} p \big(y|f^{\theta}(x) \big) p(\theta|D) d\theta$$
 
 Analytically, we usually parameterize the model posteriori $p(\theta|D)$ by a simple distribution such as Gaussian to perform tractable variational inference.
 
-For simple linear regression, we can get the analytical form:
+For simple linear regression, we can get the analytical BNN form:
 
 $$
 \begin{align}
@@ -41,7 +41,7 @@ W_{MLE} &= \mathrm{argmax}_{\theta} \log \hat{y}\\
 \end{align}
 $$
 
-For deep neural nets, dropout variational inference is proved to serve as the effective approximation
+For deep neural nets, dropout variational inference is proved to serve as an effective approximation.
 
 ## Uncertainty
 
@@ -51,7 +51,7 @@ $$\mathrm{Var}(Y) = \underbrace{\mathrm{E}[\mathrm{Var}(Y|X)]}_{\text{Model Unce
 
 Therefore, output uncertainty can be explained by (1) variance from model parameter uncertainty (2) variance from inherent data uncertainty.
 
-### Variance $\sigma^2$
+BTW,
 
 $$\begin{align}
 \mathrm{Var} (x) &= \mathrm{E}[(x - \mu)^2]\\
@@ -59,3 +59,9 @@ $$\begin{align}
 &= \mathrm{E}[x^2] - E[x]^2
 \end{align}
 $$
+
+Previous work has categorized uncertainty ($\approx$ total variance on output):
+* Epistemic uncertainty (model uncertainty)
+* Aleatoric uncertainty (data uncertainty)
+  * Heteroscedastic uncertainty (data-dependent uncertainty)
+  * Homoscedastic uncertainty (data-independent or task-dependent uncertainty)
