@@ -9,19 +9,15 @@ tags:
 
 ---
 
-Uncertainty: $\approx$ total variance on output
-* Epistemic uncertainty (model uncertainty)
-* Aleatoric uncertainty (data uncertainty)
-  * Heteroscedastic uncertainty (data-dependent uncertainty)
-  * Homoscedastic uncertainty (data-independent or task-dependent uncertainty)
-
 ## Basic
 
 [Law of total variance](https://en.wikipedia.org/wiki/Law_of_total_variance): with random variable $X$ and $Y$, the variance of $Y$ can be decomposed as:
 
-$$\mathrm{Var}(Y) = \underbrace{\mathrm{E}[\mathrm{Var}(Y|X)]}_{\mathrm{Model Uncertainty}} + \underbrace{\mathrm{Var}(\mathrm{E}[Y|X])}_{\mathrm{Data Uncertainty}}$$
+$$\mathrm{Var}(Y) = \underbrace{\mathrm{E}[\mathrm{Var}(Y|X)]}_{\text{Model Uncertainty}} + \underbrace{\mathrm{Var}(\mathrm{E}[Y|X])}_{\text{Data Uncertainty}}$$
 
-### Variance $\theta^2$
+Therefore, output uncertainty can be explained by (1) variance from model parameter uncertainty (2) variance from inherent data uncertainty.
+
+### Variance $\sigma^2$
 
 $$\begin{align}
 \mathrm{Var} (X) &= \mathrm{E}[(X - \mu)^2]\\
