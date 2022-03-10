@@ -18,6 +18,6 @@ Uncertainty: $\approx$ total variance on output
 ### Basic
 
 $$\begin{align}
-\text{Var} (X) = 
+\text{Var} (X) = \text{E} \textrm{E}
 \end{align}
 $$
