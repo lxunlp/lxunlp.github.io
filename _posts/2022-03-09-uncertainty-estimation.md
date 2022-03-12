@@ -100,6 +100,10 @@ Depending on interests, we don't have to address both model and data variance.
 * Only address model variance: obtain final uncertainty by simply performing Monte-Carlo Dropout
 * Only address data variance: obtain final uncertainty by using a single model to only predict $\sigma$ (discard BNN)
 
+## Uncertainty for Classification
+
+Usually assume Gaussian on logit space. Details in papers.
+
 # Related Work
 
 **What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision?**. Kendall and Gal. NIPS'17\

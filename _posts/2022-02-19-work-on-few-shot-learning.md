@@ -57,6 +57,16 @@ Relation network: combine Siamese network and Prototypical network: (1) learn th
 
 ## Self-Learning (Pseudo Label)
 
+**Uncertainty-aware Self-training for Text Classification with Few Labels**. Mukherjee and Awadallah. NIPS'20\
+Normal SL process but (1) select by BALD (dropout entropy) (2) select with exploration (3) weight loss by uncertainty from teacher.\
+<http://arxiv.org/abs/2006.15315>
+
+**Contrast-enhanced Semi-supervised Text Classification with Few Labels**. Tsai et al. AAAI'22\
+Based on Mukherjee'20 but (1) add loss to push predicted same class towards similar repr for smooth boundary (2) in that process, only use on high confident predicted pairs (3) apply
+huberised loss for noise-agnostic training.\
+Improvement is not that much though.\
+<https://aaai-2022.virtualchair.net/poster_aaai4001>
+
 ## in NLP Venue
 
 **Discriminative Nearest Neighbor Few-Shot Intent Detection by Transferring Natural Language Inference**. Zhang et al. EMNLP'20\
