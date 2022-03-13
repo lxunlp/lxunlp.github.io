@@ -40,3 +40,7 @@ Add and connect latent nodes of different types: discourse units, coreferent ent
 **Heterogeneous Graph Transformer for Graph-to-Sequence Learning**. Yao et al. ACL'20\
 Decompose original graphs into different subgraphs and perform graph propagation for each subgraph. Then, concat each node repr of different subgraphs and then transform to a single node repr.\
 <https://aclanthology.org/2020.acl-main.640>
+
+**Heterogeneity-aware Twitter Bot Detection with Relational Graph Transformers**. Feng et al. AAAI'22\
+GAT per heterogeneous graph, then aggregate each node across graphs.\
+<https://arxiv.org/pdf/2109.02927>

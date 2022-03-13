@@ -42,6 +42,10 @@ Better for span-selection tasks such as extractive QA or coreference resolution:
 More efficient pre-training objective: a discriminator to predict whether a token is replaced with a plausible alternative by a small MLM model (generator). Although similar to GAN, generator is trained independently. More efficient since prediction is on all tokens, leading to better performance under the same condition compared with MLM.\
 <https://arxiv.org/pdf/2003.10555.pdf>
 
+**SAS: Self-Augmentation Strategy for Language Model Pre-training**. Xu et al. AAAI'22\
+Similar to ELECTRA, but combine generator inside the model as a special head.\
+<http://arxiv.org/abs/2106.07176>
+
 **Unified Language Model Pre-training for Natural Language Understanding and Generation**. Dong et al. NIPS'19\
 Handle both NLU and generation.\
 Decoder pretraining: recover only the corrupted span.
@@ -120,6 +124,12 @@ No other objectives.\
 **Differentiable Subset Pruning of Transformer Heads**. Li et al. TACL'21\
 User-specified number of pruned heads.\
 <https://arxiv.org/abs/2108.04657>
+
+**Adversarial Data Augmentation for Task-Specific Knowledge Distillation of Pre-Trained Transformers**. Zhang et al. AAAI'22\
+Good related work.\
+Task-specific distillation: (1) standard KD (2) Adversarial Data Augmentation using embedding perturbation.\
+Benefits: embedding augmentation helps low-resource and generalization.\
+<https://aaai-2022.virtualchair.net/poster_aaai1872>
 
 ## For Incorporating Knowledge
 

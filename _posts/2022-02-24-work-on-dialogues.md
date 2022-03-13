@@ -18,8 +18,10 @@ Evaluate four pretraining objectives on dialogue data to improve the dialogue re
 <https://www.aclweb.org/anthology/P19-1373/>
 
 **ConveRT: Efficient and Accurate Conversational Representations from Transformers**. Henderson et al. 2019\
-Conversational Representations from Transformers: use response-selection as unsupervised pretraining objective for dialogue tasks. Transformer layers are shared for input and response encoding.\
-To encode more history context which is shown to be helpful in other tasks, optionally use another Transformer encoder to encode history and average two to get final representation (is averaging really useful?).\
+Conversational Representations from Transformers: use response-selection as unsupervised pretraining objective for
+dialogue tasks. Transformer layers are shared for input and response encoding.\
+To encode more history context which is shown to be helpful in other tasks, optionally use another Transformer encoder
+to encode history and average two to get final representation (is averaging really useful?).\
 <https://arxiv.org/pdf/1911.03688>
 
 **TOD-BERT: Pre-trained Natural Language Understanding for Task-Oriented Dialogue**. Wu et al. EMNLP'20\
@@ -27,7 +29,8 @@ Similar to ConveRT: dual encoder for context and response with contrastive loss 
 <https://www.aclweb.org/anthology/2020.emnlp-main.66>
 
 **Probing Task-Oriented Dialogue Representation from Language Models**. Wu and Xiong. EMNLP'20\
-Probe LMs on dialogue datasets by two metrics: (1) linear classifier on example's CLS (2) mutual information on examples' CLS clustering.\
+Probe LMs on dialogue datasets by two metrics: (1) linear classifier on example's CLS (2) mutual information on
+examples' CLS clustering.\
 Finding: ConveRT and TOD-BERT-jnt perform the best.\
 Question: freeze CLS or not??\
 <https://www.aclweb.org/anthology/2020.emnlp-main.409>
@@ -37,7 +40,21 @@ Similar to BART or UniLM on dialogue domain for generation tasks, and introduce 
 Sparse attention for long sequence helps little.\
 <https://arxiv.org/pdf/2109.02492.pdf>
 
-## Downstream Tasks (Non-Generation)
+# Dialogue Systems (Generation)
+
+## Dialogue Evaluation
+
+**Learning an Unreferenced Metric for Online Dialogue Evaluation**. Sinha et al. ACL'20\
+Referenced metrics: correlate poorly to human judgement, as reasonable response can be versatile.\
+Propose self-supervised unreferenced metric MADUE that correlate better with human: train model to score response on large-scale corpus with negative examples.\
+<https://aclanthology.org/2020.acl-main.220>
+
+**MDD-Eval: Self-Training on Augmented Data for Multi-Domain Dialogue Evaluation**. Zhang et al. AAAI'22\
+Good baselines with referenced and unreferenced metrics.\
+Propose semi-supervised metric through self-learning with augmentation on unlabeled data; student model learns soft pseudo labels.\
+<http://arxiv.org/abs/2112.07194>
+
+# Dialogue Downstream Tasks (Non-Generation)
 
 **Dialogue-Based Relation Extraction**. Yu et al. ACL'20\
 Propose cross-sentence relation extraction task on dialogue with new dataset and baselines.\
