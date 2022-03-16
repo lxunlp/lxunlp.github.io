@@ -124,6 +124,18 @@ Convolutional Networks**. Nguyen et al. NAACL'21\
 Task-interaction in LSTM encoder.\
 <https://aclanthology.org/2021.emnlp-main.17/>
 
+**REBEL: Relation Extraction By End-to-end Language generation**. Cabot and Navigli. EMNLP Findings'21\
+<https://aclanthology.org/2021.findings-emnlp.204/>
+
+**GenerativeRE: Incorporating a Novel Copy Mechanism and Pretrained Model for Joint Entity and Relation Extraction**. Cao and Ananiadou. EMNLP Findings'21\
+<https://aclanthology.org/2021.findings-emnlp.182/>
+
+**OneRel: Joint Entity and Relation Extraction with One Module in One Step**. Shang et al. AAAI'22\
+<https://arxiv.org/pdf/2203.05412>
+
+**Joint Entity and Relation Extraction with Set Prediction Networks**. Sui et al. AAAI'22\
+<https://arxiv.org/pdf/2011.01675>
+
 ## Approach: Evidence-Guided
 
 **Three Sentences Are All You Need: Local Path Enhanced Document Relation Extraction**. Huang et al. ACL'21\
@@ -138,24 +150,24 @@ to select evidence sentences (on average < 3 sentences) and discard others.\
 Train a simple sentence-evidence binary
 classier per entity pair, then use predicted evidence to predict relations. Final results use fusion between full doc
 and evidence only.\
-<https://arxiv.org/pdf/2106.08657.pdf>
+<https://arxiv.org/pdf/2106.08657>
 
 ## Approach: Sequence-based Encoding
 
 **HIN: Hierarchical Inference Network for Document-Level Relation Extraction**. Tang et al. PAKDD'20\
 Hierarchical encoding:
 doc repr of entity pair, which is attended sent repr conditioned on entity pair repr.\
-<https://arxiv.org/pdf/2003.12754.pdf>
+<https://arxiv.org/pdf/2003.12754>
 
 **Document-Level Relation Extraction with Adaptive Thresholding and Localized Context Pooling**. Zhou et al. AAAI'21\
 (1) Marginalized pos and neg relation prediction by using a learned threshold\
 (2) gather entity-level self-attention to concat as a new context emb for entity pair.\
-<https://arxiv.org/pdf/2010.11304.pdf>
+<https://arxiv.org/pdf/2010.11304>
 
 **Entity Structure Within and Throughout: Modeling Mention Dependencies for Document-Level Relation Extraction**. Xu et al.
 AAAI'21\
 Structural encoding (token-level coref and co-occurance structure) into self-attention.\
-<https://arxiv.org/pdf/2102.10249.pdf>
+<https://arxiv.org/pdf/2102.10249>
 
 **Learning Logic Rules for Document-level Relation Extraction**. Ru et al. EMNLP'21\
 TODO\
@@ -165,11 +177,23 @@ TODO\
 TODO\
 <https://aclanthology.org/2021.emnlp-main.429>
 
+**Document-Level Relation Extraction with Reconstruction**. Xu et al. AAAI'21\
+<https://arxiv.org/abs/2012.11384>
+
 ## Approach: Graph-based Encoding
 
 **Connecting the Dots: Document-level Neural Relation Extraction with Edge-oriented Graphs**. Christopoulou et al. EMNLP'19\
 Heterogeneous graph.\
 <https://aclanthology.org/D19-1498/>
+
+**Global Context-enhanced Graph Convolutional Networks for Document-level Relation Extraction**. Zhou et al. COLING'20\
+<https://aclanthology.org/2020.coling-main.461>
+
+**Global-to-Local Neural Networks for Document-Level Relation Extraction**. Wang et al. EMNLP'20\
+<https://aclanthology.org/2020.emnlp-main.303>
+
+**Double Graph Based Reasoning for Document-level Relation Extraction**. Zeng et al. EMNLP'20\
+<https://aclanthology.org/2020.emnlp-main.127>
 
 **Reasoning with Latent Structure Refinement for Document-Level Relation Extraction**. Nan et al. ACL'21\
 Similar to
@@ -209,7 +233,49 @@ TODO\
 Entity-centric n-ary relation extraction.\
 <https://aclanthology.org/N19-1370/>
 
+# Task: Few-Shot IE
+
+**FewRel 2.0: Towards More Challenging Few-Shot Relation Classification**. Gao et al. EMNLP'19\
+<https://aclanthology.org/D19-1649/>
+
+**Entity Concept-enhanced Few-shot Relation Extraction**. Yang et al. ACL'21\
+<https://aclanthology.org/2021.acl-short.124>
+
+**Exploring Task Difficulty for Few-Shot Relation Extraction**. Han et al. EMNLP'21\
+<https://aclanthology.org/2021.emnlp-main.204>
+
+**Label Verbalization and Entailment for Effective Zero and Few-Shot Relation Extraction**. Sainz et al. EMNLP'21\
+<https://aclanthology.org/2021.emnlp-main.92>
+
+**Towards Realistic Few-Shot Relation Extraction**. Brody et al. EMNLP'21\
+<https://aclanthology.org/2021.emnlp-main.433/>
+
 # Task: Open-IE
+
+## Cluster-based
+
+**Open Relation Extraction: Relational Knowledge Transfer from Supervised Data to Unsupervised Data**. Wu et al. EMNLP'19\
+<https://aclanthology.org/D19-1021>
+
+**SelfORE: Self-supervised Relational Feature Learning for Open Relation Extraction**. Hu et al. EMNLP'20\
+<https://aclanthology.org/2020.emnlp-main.299>
+
+**Element Intervention for Open Relation Extraction**. Liu et al. ACL'21\
+<https://aclanthology.org/2021.acl-long.361>
+
+**Unsupervised Relation Extraction: A Variational Autoencoder Approach**. Yuan and Eldardiry. EMNLP'21\
+<https://aclanthology.org/2021.emnlp-main.147>
+
+**A Relation-Oriented Clustering Method for Open Relation Extraction**. Zhao et al. EMNLP'21\
+<https://aclanthology.org/2021.emnlp-main.765/>
+
+## Predicate-based
+
+**Supervised Open Information Extraction**. Stanovsky et al. NAACL'18\
+<https://aclanthology.org/N18-1081>
+
+**IMOJIE: Iterative Memory-Based Joint Open Information Extraction**. Kolluru et al. ACL'20\
+<https://aclanthology.org/2020.acl-main.521>
 
 **OpenIE6: Iterative Grid Labeling and Coordination Analysis for Open Information Extraction**. Kolluru et al. EMNLP'20\
 <https://aclanthology.org/2020.emnlp-main.306/>
@@ -217,7 +283,22 @@ Entity-centric n-ary relation extraction.\
 **Multi2OIE: Multilingual Open Information Extraction Based on Multi-Head Attention with BERT**. Ro et al. EMNLP Findings'20\
 <https://arxiv.org/abs/2009.08128>
 
+**LSOIE: A Large-Scale Dataset for Supervised Open Information Extraction**. Solawetz and Larson. EACL'21\
+<https://aclanthology.org/2021.eacl-main.222>
+
+**Zero-Shot Information Extraction as a Unified Text-to-Triple Translation**. Wang et al. EMNLP'21\
+<https://aclanthology.org/2021.emnlp-main.94>
+
 **DetIE: Multilingual Open Information Extraction Inspired by Object Detection**. Vasilkovsky et al. AAAI'22\
+<https://www.aaai.org/AAAI22Papers/AAAI-8073.VasilkovskyM.pdf>
+
+# Task: Continual RE
+
+**Sentence Embedding Alignment for Lifelong Relation Extraction**. Wang et al. NAACL'19
+
+**Continual Relation Learning via Episodic Memory Activation and Reconsolidation**. Xu et al. ACL'20
+
+**Curriculum-Meta Learning for Order-Robust Continual Relation Extraction**. Wu et al. AAAI'21
 
 # Task: KG Completion
 
@@ -225,3 +306,8 @@ Entity-centric n-ary relation extraction.\
 Linearize each local subgraph individually and encode by BERT, paired with target triple to do MIL scoring.\
 Thereafter to achieve both semantic representation and implicit rule inference.\
 <https://arxiv.org/pdf/2103.07102>
+
+# Analysis
+
+**More Data, More Relations, More Context and More Openness: A Review and Outlook for Relation Extraction**. Han et al. AACL'20\
+<https://aclanthology.org/2020.aacl-main.75>

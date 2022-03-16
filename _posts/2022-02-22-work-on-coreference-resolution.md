@@ -11,11 +11,17 @@ tags:
 
 ## Traditional Coref
 
+**Sequence to Sequence Coreference Resolution**. Urbizu et al. CRAC'20\
+<https://aclanthology.org/2020.crac-1.5>
+
 **Incorporating Syntax and Semantics in Coreference Resolution with Heterogeneous Graph Attention Network**. Jiang and Cohn.
 NAACL'21\
 Construct syntactic graph by syntactic dependencies and semantic graph by SRL + GAT per graph + heterogeneous
 integration.\
 <https://aclanthology.org/2021.naacl-main.125/>
+
+**Incorporating Constituent Syntax for Coreference Resolution**. Jiang and Cohn. AAAI'22\
+<https://arxiv.org/pdf/2202.10710.pdf>
 
 ## Cross-Document Coref
 
