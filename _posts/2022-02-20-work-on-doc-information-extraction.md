@@ -11,6 +11,9 @@ tags:
 ---
 
 # Task: Doc-Level RE
+---
+
+## Dataset
 
 **DocRED: A Large-Scale Document-Level Relation Extraction Dataset**. Yao et al. ACL'19\
 Multi-label classification on entity-pair. Predicting: bilinear on entity pair\
@@ -44,39 +47,7 @@ On Friends data.\
 **BioCreative V CDR task corpus: a resource for chemical disease relation extraction**. Li et al. 2016\
 <https://academic.oup.com/database/article/doi/10.1093/database/baw068/2630414>
 
-## Approach: Pretraining
-
-**Matching the Blanks: Distributional Similarity for Relation Learning**. Livio et al. ACL'19\
-Sent-level.\
-<https://aclanthology.org/P19-1279/>
-
-**Learning from Context or Names? An Empirical Study on Neural Relation Extraction**. Peng et al. EMNLP'20\
-Sent-level.\
-Analysis: context is the main source to support classification, entity type also provides critical information; mention
-itself may provide shallow clues without need to understand context. Approach: contrastive learning utilizing KB; help
-with low-resource\
-<https://aclanthology.org/2020.emnlp-main.298>
-
-**Coreferential Reasoning Learning for Language Representation**. Ye et al. EMNLP'20\
-Doc-level. Pretrain with Mention
-Reference Prediction (in addition to MLM): mask one mention and optimize the marginal likelihood of repeated mentions (
-heuristic assumption: repeated noun mentions in a sequence refer to each other). Improvement is dataset-specific;
-trivial for DocRED.\
-<https://aclanthology.org/2020.emnlp-main.582.pdf>
-
-**ERICA: Improving Entity and Relation Understanding for Pre-trained Language Models via Contrastive Learning**. Qin et al.
-ACL'21\
-Doc-level. Contrastive learning on two pretraining tasks on entity and relation representation; help with
-low-resource\
-<https://aclanthology.org/2021.acl-long.260>
-
-## Approach: Denoising Distant Supervision
-
-**Denoising Relation Extraction from Document-level Distant Supervision**. Xiao et al. EMNLP'20\
-TODO\
-<https://aclanthology.org/2020.emnlp-main.300>
-
-## Approach: Joint Tasks
+## Approach: Focus on Joint
 
 **A Hierarchical Multi-task Approach for Learning Embeddings from Semantic Tasks**. Sanh et al. AAAI'19\
 Hierarchical repr
@@ -111,7 +82,7 @@ Benefits as generation: (1)
 generation decoding captures entity dependencies (2) naturally n-ary without exponential combinations of entities.\
 <https://aclanthology.org/2021.emnlp-main.426>
 
-## Approach: Joint Tasks (Non-Doc-Level)
+## Approach: Focus on Joint (Non-Doc-Level)
 
 **A Frustratingly Easy Approach for Entity and Relation Extraction**. Zhong and Chen. NAACL'21\
 <https://aclanthology.org/2021.naacl-main.5/>
@@ -136,23 +107,9 @@ Task-interaction in LSTM encoder.\
 **Joint Entity and Relation Extraction with Set Prediction Networks**. Sui et al. AAAI'22\
 <https://arxiv.org/pdf/2011.01675>
 
-## Approach: Evidence-Guided
+## Approach: focus on RE only (given Entities)
 
-**Three Sentences Are All You Need: Local Path Enhanced Document Relation Extraction**. Huang et al. ACL'21\
-Heuristic rules
-to select evidence sentences (on average < 3 sentences) and discard others.\
-<https://aclanthology.org/2021.acl-short.126>
-
-**Entity and Evidence Guided Relation Extraction for DocRED**. Huang et al. 2020\
-<https://arxiv.org/abs/2008.12283>
-
-**EIDER: Evidence-enhanced Document-level Relation Extraction**. Xie et al. 2021\
-Train a simple sentence-evidence binary
-classier per entity pair, then use predicted evidence to predict relations. Final results use fusion between full doc
-and evidence only.\
-<https://arxiv.org/pdf/2106.08657>
-
-## Approach: Sequence-based Encoding
+### Sequence-based RE
 
 **HIN: Hierarchical Inference Network for Document-Level Relation Extraction**. Tang et al. PAKDD'20\
 Hierarchical encoding:
@@ -180,7 +137,7 @@ TODO\
 **Document-Level Relation Extraction with Reconstruction**. Xu et al. AAAI'21\
 <https://arxiv.org/abs/2012.11384>
 
-## Approach: Graph-based Encoding
+### Graph-based RE
 
 **Connecting the Dots: Document-level Neural Relation Extraction with Edge-oriented Graphs**. Christopoulou et al. EMNLP'19\
 Heterogeneous graph.\
@@ -213,7 +170,56 @@ Findings'21\
 TODO\
 <https://aclanthology.org/2021.findings-acl.117>
 
+## Approach: Focus on Distant Supervision
+
+**Denoising Relation Extraction from Document-level Distant Supervision**. Xiao et al. EMNLP'20\
+TODO\
+<https://aclanthology.org/2020.emnlp-main.300>
+
+## Approach: focus on Pretraining
+
+**Matching the Blanks: Distributional Similarity for Relation Learning**. Livio et al. ACL'19\
+Sent-level.\
+<https://aclanthology.org/P19-1279/>
+
+**Learning from Context or Names? An Empirical Study on Neural Relation Extraction**. Peng et al. EMNLP'20\
+Sent-level.\
+Analysis: context is the main source to support classification, entity type also provides critical information; mention
+itself may provide shallow clues without need to understand context. Approach: contrastive learning utilizing KB; help
+with low-resource\
+<https://aclanthology.org/2020.emnlp-main.298>
+
+**Coreferential Reasoning Learning for Language Representation**. Ye et al. EMNLP'20\
+Doc-level. Pretrain with Mention
+Reference Prediction (in addition to MLM): mask one mention and optimize the marginal likelihood of repeated mentions (
+heuristic assumption: repeated noun mentions in a sequence refer to each other). Improvement is dataset-specific;
+trivial for DocRED.\
+<https://aclanthology.org/2020.emnlp-main.582.pdf>
+
+**ERICA: Improving Entity and Relation Understanding for Pre-trained Language Models via Contrastive Learning**. Qin et al.
+ACL'21\
+Doc-level. Contrastive learning on two pretraining tasks on entity and relation representation; help with
+low-resource\
+<https://aclanthology.org/2021.acl-long.260>
+
+## Approach: Focus on Evidence-Guided
+
+**Three Sentences Are All You Need: Local Path Enhanced Document Relation Extraction**. Huang et al. ACL'21\
+Heuristic rules
+to select evidence sentences (on average < 3 sentences) and discard others.\
+<https://aclanthology.org/2021.acl-short.126>
+
+**Entity and Evidence Guided Relation Extraction for DocRED**. Huang et al. 2020\
+<https://arxiv.org/abs/2008.12283>
+
+**EIDER: Evidence-enhanced Document-level Relation Extraction**. Xie et al. 2021\
+Train a simple sentence-evidence binary
+classier per entity pair, then use predicted evidence to predict relations. Final results use fusion between full doc
+and evidence only.\
+<https://arxiv.org/pdf/2106.08657>
+
 # Task: for other Datasets
+---
 
 **Enhancing Dialogue-based Relation Extraction by Speaker and Trigger Words Prediction**. Zhao et al. ACL Findings'21\
 On DialogRE.\
@@ -224,6 +230,7 @@ Pairwise scoring on given event spans: use REINFORCE to select important sentenc
 <https://www.aaai.org/AAAI22Papers/AAAI-3912.ManH.pdf>
 
 # Task: n-ary RE
+---
 
 **Cross-Sentence N-ary Relation Extraction with Graph LSTMs**. Peng et al. TACL'17\
 TODO\
@@ -234,6 +241,7 @@ Entity-centric n-ary relation extraction.\
 <https://aclanthology.org/N19-1370/>
 
 # Task: Few-Shot IE
+---
 
 **FewRel 2.0: Towards More Challenging Few-Shot Relation Classification**. Gao et al. EMNLP'19\
 <https://aclanthology.org/D19-1649/>
@@ -251,6 +259,7 @@ Entity-centric n-ary relation extraction.\
 <https://aclanthology.org/2021.emnlp-main.433/>
 
 # Task: Open-IE
+---
 
 ## Cluster-based
 
@@ -293,6 +302,7 @@ Entity-centric n-ary relation extraction.\
 <https://www.aaai.org/AAAI22Papers/AAAI-8073.VasilkovskyM.pdf>
 
 # Task: Continual RE
+---
 
 **Sentence Embedding Alignment for Lifelong Relation Extraction**. Wang et al. NAACL'19
 
@@ -301,6 +311,7 @@ Entity-centric n-ary relation extraction.\
 **Curriculum-Meta Learning for Order-Robust Continual Relation Extraction**. Wu et al. AAAI'21
 
 # Task: KG Completion
+---
 
 **Inductive Relation Prediction by BERT**. Zha et al. AAAI'22\
 Linearize each local subgraph individually and encode by BERT, paired with target triple to do MIL scoring.\
@@ -308,6 +319,7 @@ Thereafter to achieve both semantic representation and implicit rule inference.\
 <https://arxiv.org/pdf/2103.07102>
 
 # Analysis
+---
 
 **More Data, More Relations, More Context and More Openness: A Review and Outlook for Relation Extraction**. Han et al. AACL'20\
 <https://aclanthology.org/2020.aacl-main.75>
