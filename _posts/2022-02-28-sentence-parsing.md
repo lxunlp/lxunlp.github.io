@@ -9,6 +9,13 @@ tags:
 
 ---
 
+## Task: Named Entity Recognition (NER)
+
+**Unified Named Entity Recognition as Word-Word Relation Classification**. Li et al. AAAI'22\
+Novel formulation.\
+<https://arxiv.org/pdf/2112.10070>
+
+
 ## Task: Semantic Role Labeling (SRL)
 
 **Jointly Predicting Predicates and Arguments in Neural Semantic Role Labeling**. He et al. ACL'18\
@@ -22,7 +29,6 @@ Similar to Lee'17: enumerate and prune for both arguments and predicates; then p
 Independently prune arguments first; then perform bilinear scoring between each words/predicates and arguments. Note that edges are predicted first, and labels are predicted separately (necessary?).\
 Second-order helps little.\
 <https://www.aaai.org/AAAI22Papers/AAAI-7985.JiaZ.pdf>
-
 
 ## Others
 

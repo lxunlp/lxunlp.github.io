@@ -23,6 +23,11 @@ integration.\
 **Incorporating Constituent Syntax for Coreference Resolution**. Jiang and Cohn. AAAI'22\
 <https://arxiv.org/pdf/2202.10710.pdf>
 
+## Multilingual Coref
+
+**Neural Cross-Lingual Coreference Resolution And Its Application To Entity Linking**. Kundu et al. ACL'18\
+<https://aclanthology.org/P18-2063/>
+
 ## Cross-Document Coref
 
 **Focus on what matters: Applying Discourse Coherence Theory to Cross Document Coreference**. Held et al. EMNLP'21\

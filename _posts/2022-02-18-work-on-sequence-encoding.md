@@ -145,6 +145,15 @@ Inject triplets into the sequence with soft position embedding and masked attent
 Inject by replacing entity with repr of lexical head/tail/relation and entity description (no need to require separate KG embedding).\
 <https://arxiv.org/pdf/2112.01047>
 
+## For Analysis
+
+**SparseBERT: Rethinking the Importance Analysis in Self-attention**. Shi et al. ICML'21\
+Diagonal positions in attention map are not as important compared to other positions.\
+<https://arxiv.org/pdf/2102.12871>
+
+**Probing Linguistic Information for Logical Inference In Pre-Trained Language Models**. Chen and Gao. AAAI'22\
+<https://arxiv.org/abs/2112.01753>
+
 ## Recent Survey
 
 **Pre-Trained Models: Past, Present and Future**. Han et al. arXiv'21\

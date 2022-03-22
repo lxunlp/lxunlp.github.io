@@ -35,26 +35,16 @@ Finding: ConveRT and TOD-BERT-jnt perform the best.\
 Question: freeze CLS or not??\
 <https://www.aclweb.org/anthology/2020.emnlp-main.409>
 
+**CONVFIT: Conversational Fine-Tuning of Pretrained Language Models**. Vulic et al. EMNLP'21\
+Adapt LM for conversational-based. (1) unsupervised response-ranking loss (2) intent as sentence-similarity loss.\
+<https://aclanthology.org/2021.emnlp-main.88>
+
 **DIALOGLM: Pre-trained Model for Long Dialogue Understanding and Summarization**. Zhong et al. AAAI'22\
 Similar to BART or UniLM on dialogue domain for generation tasks, and introduce dialogue-specific corruption.\
 Sparse attention for long sequence helps little.\
 <https://arxiv.org/pdf/2109.02492.pdf>
 
-# Dialogue Systems (Generation)
-
-## Dialogue Evaluation
-
-**Learning an Unreferenced Metric for Online Dialogue Evaluation**. Sinha et al. ACL'20\
-Referenced metrics: correlate poorly to human judgement, as reasonable response can be versatile.\
-Propose self-supervised unreferenced metric MADUE that correlate better with human: train model to score response on large-scale corpus with negative examples.\
-<https://aclanthology.org/2020.acl-main.220>
-
-**MDD-Eval: Self-Training on Augmented Data for Multi-Domain Dialogue Evaluation**. Zhang et al. AAAI'22\
-Good baselines with referenced and unreferenced metrics.\
-Propose semi-supervised metric through self-learning with augmentation on unlabeled data; student model learns soft pseudo labels.\
-<http://arxiv.org/abs/2112.07194>
-
-# Dialogue Downstream Tasks (Non-Generation)
+## Dialogue Downstream Tasks (Non-Generation)
 
 **Dialogue-Based Relation Extraction**. Yu et al. ACL'20\
 Propose cross-sentence relation extraction task on dialogue with new dataset and baselines.\
@@ -82,6 +72,9 @@ Tagging as span extraction. Similar to BERT-LSTM-CRF, this work uses ConveRT-CNN
 Classify emotion for each utterance by modeling speaker-aware dialogue context. Each utterance is the concatenation of two representation: (1) speaker-agnostic representation by sequential encoding on RNN (2) speaker-dependent representation by building utterance graph with speaker dependency and temporal dependency, aggregate utterance/node by GCN.\
 <https://www.aclweb.org/anthology/D19-1015>
 
+**Contrast and Generation Make BART a Good Dialogue Emotion Recognizer**. Li et al. AAAI'22\
+<https://arxiv.org/abs/2112.11202>
+
 **Enhancing Dialogue Symptom Diagnosis with Global Attention and Symptom Graph**. Chen et al. EMNLP'19\
 Task: identify symptom and status in medical conversation. Model: (1) extract symptom by tagging, modeling the utterance with attention on document-level and corpus-level (2) build symptom graph where edge indicates two symptoms co-occur at the same dialogue (3) status classification on each symptom/node.\
 <https://www.aclweb.org/anthology/D19-1508>
@@ -89,3 +82,42 @@ Task: identify symptom and status in medical conversation. Model: (1) extract sy
 **Response Selection for Multi-Party Conversations with Dynamic Topic Tracking**. Wang et al. EMNLP'20\
 Response selection with auxiliary multi-tasking and fine-grained representation.\
 <https://www.aclweb.org/anthology/2020.emnlp-main.533/>
+
+---
+
+# Dialogue Systems
+
+## Generation Approach
+
+## Retrieval Approach
+
+**Learning Implicit User Profiles for Personalized Retrieval-Based Chatbot**. Qian et al. CIKM'21\
+<https://arxiv.org/abs/2108.07935>
+
+## Hybrid Approach
+
+**Recipes for Building an Open-Domain Chatbot**. Roller et al. EACL'21\
+Compare (1) retrieval (2) generative (3) retrieval-then-refine.\
+<https://aclanthology.org/2021.eacl-main.24>
+
+## Dialogue Evaluation
+
+**Learning an Unreferenced Metric for Online Dialogue Evaluation**. Sinha et al. ACL'20\
+Referenced metrics: correlate poorly to human judgement, as reasonable response can be versatile.\
+Propose self-supervised unreferenced metric MADUE that correlate better with human: train model to score response on
+large-scale corpus with negative examples.\
+<https://aclanthology.org/2020.acl-main.220>
+
+**MDD-Eval: Self-Training on Augmented Data for Multi-Domain Dialogue Evaluation**. Zhang et al. AAAI'22\
+Good baselines with referenced and unreferenced metrics.\
+Propose semi-supervised metric through self-learning with augmentation on unlabeled data; student model learns soft
+pseudo labels.\
+<http://arxiv.org/abs/2112.07194>
+
+## Dialogue Management
+
+**Recent Advances in Deep Learning Based Dialogue Systems: A Systematic Survey**. Ni et al. ArXiv'21\
+<https://arxiv.org/abs/2105.04387>
+
+**Neural, Neural Everywhere: Controlled Generation Meets Scaffolded, Structured Dialogue**. Chi et al. 2021\
+System from Stanford in Alexa Prize 4; clear description on dialogue design.

@@ -212,6 +212,7 @@ It performs better than directly training on downstream pairs, although this fee
 <https://www.aclweb.org/anthology/2020.emnlp-main.210>
 
 ## Transfer on Downstream Tasks
+
 ### Only Source Language in Training
 
 **From Zero to Hero: On the Limitations of Zero-Shot Language Transfer with Multilingual Transformers**. Lauscher et al. EMNLP'20\
@@ -227,45 +228,53 @@ Suggestion: find the best checkpoint on target language's dev. (Why don't few-sh
 Use existing MWE as feature, and propose Transformers decoder that enforces order-free representation for better generalization across languages, using order-free position embeddings. Evaluate on zero-shot dependency parsing, and perform better than regular Transformers or RNN.\
 <https://www.aclweb.org/anthology/N19-1253/>
 
-### w/ Target Language in Training (Not Necessarily Parallel Corpus)
-
-**Learn to Cross-lingual Transfer with Meta Graph Learning Across Heterogeneous Languages**. Li et al. EMNLP'20\
-General cross-lingual transfer: apply metric-based meta-learning in downstream tasks to learn similarity of language pairs (language as task). Then use this similarity as a graph and perform GCN to refine node.\
-<https://www.aclweb.org/anthology/2020.emnlp-main.179>
-
-**Zero-Shot Cross-Lingual Transfer with Meta Learning**. Nooralahzadeh et al. EMNLP'20\
-General cross-lingual transfer: apply optimization-based meta-learning to learn the parameters that can be finetuned rapidly on different languages.\
-<https://www.aclweb.org/anthology/2020.emnlp-main.368>
+### w/ Unlabeled Target Language (Not Necessarily Parallel Corpus)
 
 **A Robust Self-Learning Framework for Cross-Lingual Text Classification**. Dong and Melo. EMNLP'19\
 Make use of unlabelled target language data; joint ME as encoder.\
-Use self-learning on zero/few-shot cross-lingual classification, and add high-confident predicted labels on unlabeled dataset into the training set. Their evaluation shows some non-marginal improvement.\
+Use self-learning on zero/few-shot cross-lingual classification, and add high-confident predicted labels on unlabeled
+dataset into the training set. Their evaluation shows some non-marginal improvement.\
 <https://www.aclweb.org/anthology/D19-1658.pdf>
+
+**PPT: Parsimonious Parser Transfer for Unsupervised Cross-Lingual Adaptation**. Kurniawan et al. EACL'21\
+Self-learning for unlabeled structured training.\
+<https://aclanthology.org/2021.eacl-main.254/>
 
 **Zero-Resource Cross-Lingual Named Entity Recognition**. Bari et al. AAAI'20\
 Make use of unlabelled target language data; MWE + LSTM + CRF.\
-Train on source language, sample predictions on target language as silver labels; training (gold) source and (silver) target language together.\
+Train on source language, sample predictions on target language as silver labels; training (gold) source and (silver)
+target language together.\
 <https://arxiv.org/pdf/1911.09812.pdf>
 
-**Single-/Multi-Source Cross-Lingual NER via Teacher-Student Learning on Unlabeled Data in Target Language**. Wu et al. ACL'20\
+**Single-/Multi-Source Cross-Lingual NER via Teacher-Student Learning on Unlabeled Data in Target Language**. Wu et al.
+ACL'20\
 Make use of unlabelled target language data; joint ME as encoder.\
-Distill the model (with shared embedding) trained on source languages as teacher on the target language, by using MSE to align on logits. Minor improvement.\
+Distill the model (with shared embedding) trained on source languages as teacher on the target language, by using MSE to
+align on logits. Minor improvement.\
 Why don't they also try other tasks?\
 <https://arxiv.org/abs/2004.12440>
 
 **Alignment-free Cross-lingual Semantic Role Labeling**. Cai and Lapata. EMNLP'20\
 Make use of unlabelled parallel corpus; joint ME as encoder.\
-(1) project source annotation on parallel corpus to get silver target annotation (2) a specific model for SRL that regularizes on parallel corpus in the training. Writing is not that clear.\
+(1) project source annotation on parallel corpus to get silver target annotation (2) a specific model for SRL that
+regularizes on parallel corpus in the training. Writing is not that clear.\
 <https://www.aclweb.org/anthology/2020.emnlp-main.319>
 
 **Multilingual AMR-to-Text Generation**. Fan and Gardent. EMNLP'20\
 Make use of unlabelled parallel corpus; joint ME.\
-(1) get silver annotation for training on parallel corpus by using existing AMR parsing on source and project on target (2) use the same Eng AMR encoder, embedded language indicator for decoder (3) use multilingual embedding (XLM) as decoder initialization.\
+(1) get silver annotation for training on parallel corpus by using existing AMR parsing on source and project on
+target (2) use the same Eng AMR encoder, embedded language indicator for decoder (3) use multilingual embedding (XLM) as
+decoder initialization.\
 <https://www.aclweb.org/anthology/2020.emnlp-main.231>
+
+**Smelting Gold and Silver for Improved Multilingual AMR-to-Text Generation**. Ribeiro et al. EMNLP'21\
+Strategy to combine (1) gold AMR with translated sentences (2) generated AMR, as noisy labels for target languages.\
+<https://aclanthology.org/2021.emnlp-main.57>
 
 **Unsupervised Cross-Lingual Part-of-Speech Tagging for Truly Low-Resource Scenarios**. Eskander et al. EMNLP'20\
 Make use of unlabelled parallel corpus; joint ME as features + LSTM as encoder.\
-(1) obtain silver annotation for training on parallel corpus: use existing Eng parsing tool on source, and use existing word alignment tool and heuristic to project POS from source on target (2) further, use brown cluster as feature.\
+(1) obtain silver annotation for training on parallel corpus: use existing Eng parsing tool on source, and use existing
+word alignment tool and heuristic to project POS from source on target (2) further, use brown cluster as feature.\
 <https://www.aclweb.org/anthology/2020.emnlp-main.391>
 
 **XL-AMR: Enabling Cross-Lingual AMR Parsing with Transfer Learning Techniques**. Blloshmi et al. EMNLP'20\
@@ -273,19 +282,75 @@ Make use of unlabelled parallel corpus; MWE + LSTM.\
 (1) annotation project + translation.\
 <https://www.aclweb.org/anthology/2020.emnlp-main.195>
 
+### w/ Small Labeled Target Language
+
+**Multi-View Cross-Lingual Structured Prediction with Minimum Supervision**. Hu et al. ACL'21\
+Learned weighted views through small labeled target samples, while regularizing multi-view to be similar.\
+<https://aclanthology.org/2021.acl-long.207>
+
+### w/ External Knowledge
+
+**Cross-Lingual Named Entity Recognition via Wikification**. Tsai et al. EMNLP'19\
+Make use of external knowledge (multilingual entities).\
+Build language-independent NER model by wikification, linking every n-gram to wiki titles, and using n-gram types from
+FreeBase and Wiki categories as features. Experiments shown that it helps with both monolingual NER and zero-shot
+cross-lingual NER.\
+<https://www.aclweb.org/anthology/K16-1022.pdf>
+
+**Mind the Gap: Cross-Lingual Information Retrieval with Hierarchical Knowledge Enhancement**. Zhang et al. AAAI'22\
+Use neighboring entities of multilingual KG to enrich cross-lingual query-pair representation on mBERT.\
+<https://arxiv.org/pdf/2112.13510>
+
+### w/ Adversarial Training or Language-agnostic Representation
+
+**Adversarial Learning with Contextual Embeddings for Zero-resource Cross-lingual Classification and NER**. Keung et al.
+EMNLP'19\
+Use adversarial training to get language-agnostic representation; joint ME as encoder with explicit embedding space
+alignment using adversarial training.\
+A discriminator to force language-independent representation from mBERT.\
+<https://www.aclweb.org/anthology/D19-1138.pdf>
+
+**Cross-lingual Multi-Level Adversarial Transfer to Enhance Low-Resource Name Tagging**. Huang et al. NAACL'19\
+Use adversarial training to get language-agnostic representation; WE + CNN as encoder with explicit embedding space
+alignment using adversarial training.\
+Both word-level and sentence-level adversarial training. Tagging: BiLSTM+CRF.\
+<https://www.aclweb.org/anthology/N19-1383/>
+
+**Language-Agnostic Representation from Multilingual Sentence Encoders for Cross-Lingual Similarity Estimation**.
+Tiyajamorn et al. EMNLP'21\
+Decompose meaning embedding and language embedding, making use of parallel corpus.\
+<https://aclanthology.org/2021.emnlp-main.612>
+
+### w/ Other Techniques
+
+**Learn to Cross-lingual Transfer with Meta Graph Learning Across Heterogeneous Languages**. Li et al. EMNLP'20\
+General cross-lingual transfer: apply metric-based meta-learning in downstream tasks to learn similarity of language
+pairs (language as task). Then use this similarity as a graph and perform GCN to refine node.\
+<https://www.aclweb.org/anthology/2020.emnlp-main.179>
+
+**Zero-Shot Cross-Lingual Transfer with Meta Learning**. Nooralahzadeh et al. EMNLP'20\
+General cross-lingual transfer: apply optimization-based meta-learning to learn the parameters that can be finetuned
+rapidly on different languages.\
+<https://www.aclweb.org/anthology/2020.emnlp-main.368>
+
+### w/ w/ Translation or Other Baselines
+
 **Enhancing Answer Boundary Detection for Multilingual Machine Reading Comprehension**. Yuan et al. ACL'20\
 Make use of translation; joint ME as encoder.\
-(1) translate questions in source language to target languages and mix together; train on this mixed QA pair (2) mine knowledge phrases in different languages on web and add masked phrases in pretraining.\
+(1) translate questions in source language to target languages and mix together; train on this mixed QA pair (2) mine
+knowledge phrases in different languages on web and add masked phrases in pretraining.\
 <https://www.aclweb.org/anthology/2020.acl-main.87/>
 
 **Zero-Shot Crosslingual Sentence Simplification**. Mallinson et al. EMNLP'20\
 Make use of translation (seems like labels are also available for target language?).\
-(1) partially-shared encoder (2) language-specific decoder so that encoder representation is universal for input (3) multi-task learning in training and adversarial training.\
+(1) partially-shared encoder (2) language-specific decoder so that encoder representation is universal for input (3)
+multi-task learning in training and adversarial training.\
 <https://www.aclweb.org/anthology/2020.emnlp-main.415>
 
 **Learning with Limited Data for Multilingual Reading Comprehension**. Lee et al. EMNLP'19\
 Make use of translation; MWE + BiDAF, or joint ME as encoder.\
-Propose weakly supervised method to generate new data for new language on QA task using Question Generator and Answer Extractor. Translation alignment is important for their approach.\
+Propose weakly supervised method to generate new data for new language on QA task using Question Generator and Answer
+Extractor. Translation alignment is important for their approach.\
 <https://www.aclweb.org/anthology/D19-1283/>
 
 **Cross-Lingual Machine Reading Comprehension**. Cui et al. EMNLP'19\
@@ -293,62 +358,51 @@ Make use of translation; joint ME as encoder.\
 Propose Dual-BERT, which consider the context-query in both languages with proposed Self Adaptive Attention.\
 <https://www.aclweb.org/anthology/D19-1169.pdf>
 
+**Zero-Shot Cross-Lingual Opinion Target Extraction**. Jebbara and Cimiano. NAACL'19\
+Baseline on aspect-based sentiment analysis. Encoder: multilingual word embedding aligned by either supervised
+dictionary or unsupervised adversarial training. Decoder: CNN tagging.\
+<https://www.aclweb.org/anthology/N19-1257/>
+
+**Zero-shot Reading Comprehension by Cross-lingual Transfer Learning with Multi-lingual Language Representation Model**.
+Hsu et al. EMNLP'19\
+Baseline on cross-lingual QA. Evaluate translation approach and zero-shot approach on QA in En, Chn, Kor. Finding: (1)
+translation degrades the performance easily (2) mBert learns generalized representation.\
+<https://www.aclweb.org/anthology/D19-1607.pdf>
+
+**Neural Cross-Lingual Relation Extraction Based on Bilingual Word Embedding Mapping**. Ni and Florian. EMNLP'19\
+Baseline on relation extraction: use bilingual word embedding mapping to project target embedding to source embedding on
+existing PCNN relation extraction model.\
+<https://www.aclweb.org/anthology/D19-1038.pdf>
+
+**Document Translation vs. Query Translation for Cross-Lingual Information Retrieval in the Medical Domain**. Saleh and
+Pecina. ACL'20\
+MT application on IR. Conclusion: (1) NMT is better than SMT (2) Query Translation (QT) is much better than Document
+Translation (DT).\
+<https://www.aclweb.org/anthology/2020.acl-main.613/>
+
+**Multilingual Offensive Language Identification with Cross-lingual Embeddings**. Ranasinghe and Zampieri. EMNLP'20\
+Make use of other domains/tasks; joint ME as encoder.\
+Simple use of XLM-R to "pretrain" on Eng data, then train on other languages/domains/tasks to achieve transfer on
+offense identification task.\
+<https://www.aclweb.org/anthology/2020.emnlp-main.470/>
+
+**A Supervised Word Alignment Method based on Cross-Language Span Prediction using Multilingual BERT**. Nagata et al.
+EMNLP'20\
+Word alignment problem; joint ME as encoder.\
+Frame as QA, a span prediction problem given two input. Use basic span prediction approach with mBERT.\
+<https://www.aclweb.org/anthology/2020.emnlp-main.41>
+
 **End-to-End Slot Alignment and Recognition for Cross-Lingual NLU**. Xu et al. EMNLP'20\
 <https://www.aclweb.org/anthology/2020.emnlp-main.410>
 
 **Cross-lingual Spoken Language Understanding with Regularized Representation Alignment**. Liu et al. EMNLP'20\
 <https://www.aclweb.org/anthology/2020.emnlp-main.587>
 
-**Cross-Lingual Named Entity Recognition via Wikification**. Tsai et al. EMNLP'19\
-Make use of external knowledge (multilingual entities).\
-Build language-independent NER model by wikification, linking every n-gram to wiki titles, and using n-gram types from FreeBase and Wiki categories as features. Experiments shown that it helps with both monolingual NER and zero-shot cross-lingual NER.\
-<https://www.aclweb.org/anthology/K16-1022.pdf>
-
 **Cross-lingual Transfer Learning for Japanese Named Entity Recognition**. Johnson et al. NAACL'19\
 Direct weight transfer; WE as encoder.\
 Instead of using multilingual embedding, transfer weights in char-level, word-level, dense-level from Eng to Jpn; propose to romanize Jpn char on input.\
 <https://www.aclweb.org/anthology/N19-2023/>
 
-**Adversarial Learning with Contextual Embeddings for Zero-resource Cross-lingual Classification and NER**. Keung et al. EMNLP'19\
-Use adversarial training to get language-agnostic representation; joint ME as encoder with explicit embedding space alignment using adversarial training.\
-A discriminator to force language-independent representation from mBERT.\
-<https://www.aclweb.org/anthology/D19-1138.pdf>
-
-**Cross-lingual Multi-Level Adversarial Transfer to Enhance Low-Resource Name Tagging**. Huang et al. NAACL'19\
-Use adversarial training to get language-agnostic representation; WE + CNN as encoder with explicit embedding space alignment using adversarial training.\
-Both word-level and sentence-level adversarial training. Tagging: BiLSTM+CRF.\
-<https://www.aclweb.org/anthology/N19-1383/>
-
-**Multilingual Offensive Language Identification with Cross-lingual Embeddings**. Ranasinghe and Zampieri. EMNLP'20\
-Make use of other domains/tasks; joint ME as encoder.\
-Simple use of XLM-R to "pretrain" on Eng data, then train on other languages/domains/tasks to achieve transfer on offense identification task.\
-<https://www.aclweb.org/anthology/2020.emnlp-main.470/>
-
-**A Supervised Word Alignment Method based on Cross-Language Span Prediction using Multilingual BERT**. Nagata et al. EMNLP'20\
-Word alignment problem; joint ME as encoder.\
-Frame as QA, a span prediction problem given two input. Use basic span prediction approach with mBERT.\
-<https://www.aclweb.org/anthology/2020.emnlp-main.41>
-
-**Document Translation vs. Query Translation for Cross-Lingual Information Retrieval in the Medical Domain**. Saleh and Pecina. ACL'20\
-MT application on IR. Conclusion: (1) NMT is better than SMT (2) Query Translation (QT) is much better than Document Translation (DT).\
-<https://www.aclweb.org/anthology/2020.acl-main.613/>
-
-**Mind the Gap: Cross-Lingual Information Retrieval with Hierarchical Knowledge Enhancement**. Zhang et al. AAAI'22\
-Use neighboring entities of multilingual KG to enrich cross-lingual query-pair representation on mBERT.\
-<https://arxiv.org/pdf/2112.13510>
-
 **Cross-lingual Structure Transfer for Relation and Event Extraction**. Subburathinam et al. EMNLP'19\
 Use POS and parsing features with GCN on zero-shot extraction task.\
 <https://www.aclweb.org/anthology/D19-1030/>
-
-**Zero-Shot Cross-Lingual Opinion Target Extraction**. Jebbara and Cimiano. NAACL'19\
-Baseline on aspect-based sentiment analysis. Encoder: multilingual word embedding aligned by either supervised dictionary or unsupervised adversarial training. Decoder: CNN tagging.\
-<https://www.aclweb.org/anthology/N19-1257/>
-
-**Zero-shot Reading Comprehension by Cross-lingual Transfer Learning with Multi-lingual Language Representation Model**. Hsu et al. EMNLP'19\
-Baseline on cross-lingual QA. Evaluate translation approach and zero-shot approach on QA in En, Chn, Kor. Finding: (1) translation degrades the performance easily (2) mBert learns generalized representation.\
-<https://www.aclweb.org/anthology/D19-1607.pdf>
-
-**Neural Cross-Lingual Relation Extraction Based on Bilingual Word Embedding Mapping**. Ni and Florian. EMNLP'19\
-Baseline on relation extraction: use bilingual word embedding mapping to project target embedding to source embedding on existing PCNN relation extraction model.\
-<https://www.aclweb.org/anthology/D19-1038.pdf>
