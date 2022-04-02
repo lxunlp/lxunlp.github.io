@@ -84,6 +84,11 @@ generation decoding captures entity dependencies (2) naturally n-ary without exp
 
 ## Approach: Focus on Joint (Non-Doc-Level)
 
+### Separate Modules w/ Interactions
+
+**GraphRel: Model- ing Text as Relational Graphs for Joint Entity and Relation Extraction**. Fu et al. ACL'19\
+<https://aclanthology.org/P19-1136/>
+
 **A Frustratingly Easy Approach for Entity and Relation Extraction**. Zhong and Chen. NAACL'21\
 <https://aclanthology.org/2021.naacl-main.5/>
 
@@ -91,21 +96,76 @@ generation decoding captures entity dependencies (2) naturally n-ary without exp
 Convolutional Networks**. Nguyen et al. NAACL'21\
 <https://aclanthology.org/2021.naacl-main.3>
 
+**PRGC: Potential Relation and Global Correspondence Based Joint Relational Triple Extraction**. Zheng et al. ACL'21\
+<https://aclanthology.org/2021.acl-long.486>
+
 **A Partition Filter Network for Joint Entity and Relation Extraction**. Yan et al. EMNLP'21\
 Task-interaction in LSTM encoder.\
 <https://aclanthology.org/2021.emnlp-main.17/>
 
+### One-shot Module: S2S
+
+**Joint Entity and Relation Extraction with Set Prediction Networks**. Sui et al. ArXiv'20\
+S2S with non-autoregressive decoder + set prediction loss.\
+Generation: one triple hidden state at each step; then decode into actual triple.\
+Benefits over autoregressive: (1) avoid train/inference gap (2) avoid sequential decoding; now bidirectional decoding (3) avoid order.\
+<https://arxiv.org/pdf/2011.01675>
+
+**Extracting relational facts by an end-to-end neural model with copy mechanism**. Zeng et al. ACL'18\
+CopyRE: first S2S on joint RE; baseline of CopyMTL.\
+<https://aclanthology.org/P18-1047/>
+
+**CopyMTL: Copy Mechanism for Joint Extraction of Entities and Relations with Multi-Task Learning Authors**. Zeng et al. AAAI'20\
+S2S generation: one triple every three steps; w/ tagging to recover whole mentions.\
+<https://arxiv.org/pdf/1911.10438>
+
+**Effective Modeling of Encoder-Decoder Architecture for Joint Entity and Relation Extraction**. Nayak and Ng. AAAI'20\
+S2S generation: (1) either lexical form generation, or (2) one triple hidden state at each step.\
+<https://arxiv.org/pdf/1911.09886>
+
+**Minimize Exposure Bias of Seq2Seq Models in Joint Entity and Relation Extraction**. Zhang et al. EMNLP Findings'20\
+S2S generation: use tree-decoder that decodes triples in parallel at each step to avoid ordered output.\
+<https://aclanthology.org/2020.findings-emnlp.23>
+
+**Contrastive Triple Extraction with Generative Transformer**. Ye et al. AAAI'21\
+<https://arxiv.org/abs/2009.06207>
+
 **REBEL: Relation Extraction By End-to-end Language generation**. Cabot and Navigli. EMNLP Findings'21\
+S2S on sentence-level or doc-level joint RE in lexical form generation, w/ pretraining on a designed wiki dataset.\
 <https://aclanthology.org/2021.findings-emnlp.204/>
 
 **GenerativeRE: Incorporating a Novel Copy Mechanism and Pretrained Model for Joint Entity and Relation Extraction**. Cao and Ananiadou. EMNLP Findings'21\
 <https://aclanthology.org/2021.findings-emnlp.182/>
 
-**OneRel: Joint Entity and Relation Extraction with One Module in One Step**. Shang et al. AAAI'22\
-<https://arxiv.org/pdf/2203.05412>
+### One-shot Module: Table Filling or Tagging Scheme
 
-**Joint Entity and Relation Extraction with Set Prediction Networks**. Sui et al. AAAI'22\
-<https://arxiv.org/pdf/2011.01675>
+**Joint Extraction of Entities and Relations Based on a Novel Tagging Scheme**. Zheng et al. ACL'17\
+Sequence tagging: <entity BIO, relation, position>; cannot handle overlapping.\
+Entities are squares on diagonal, relations are rectangles off diagonal (interactions).\
+Equivalent to entity tagging along fused with learned relation bias.\
+<https://aclanthology.org/P17-1113/>
+
+**Modeling Joint Entity and Relation Extraction with Table Representation**. Miwa and Sasaki. EMNLP'14\
+First table filling work: separate entity and relation labels in the table; relation label at head-tail intersection; cannot handle overlapping.\
+<https://aclanthology.org/D14-1200/>
+
+**Table Filling Multi-Task Recurrent Neural Network for Joint Entity and Relation Extraction**. Gupta et al. COLING'16\
+<https://aclanthology.org/C16-1239/>
+
+**End-to-End Neural Relation Extraction with Global Optimization**. Zhang et al. EMNLP'17\
+<https://aclanthology.org/D17-1182>
+
+**Two are Better than One: Joint Entity and Relation Extraction with Table-Sequence Encoders**. Wang and Lu. EMNLP'20\
+Add a table encoder to directly consume table, in addition to the sequence encoding.\
+<https://aclanthology.org/2020.emnlp-main.133/>
+
+**UNIRE: A Unified Label Space for Entity Relation Extraction**. Wang et al. ACL'21\
+Table tagging (unified entity and relation label space).\
+<https://aclanthology.org/2021.acl-long.19>
+
+**OneRel: Joint Entity and Relation Extraction with One Module in One Step**. Shang et al. AAAI'22\
+Table tagging per relation but different from table filling scheme: directly tag triple boundary.\
+<https://arxiv.org/pdf/2203.05412>
 
 ## Approach: focus on RE only (given Entities)
 
@@ -322,4 +382,5 @@ Thereafter to achieve both semantic representation and implicit rule inference.\
 ---
 
 **More Data, More Relations, More Context and More Openness: A Review and Outlook for Relation Extraction**. Han et al. AACL'20\
+Directions: (1) more utilization of distant/self-supervision (2) more domains (3) more complex context.\
 <https://aclanthology.org/2020.aacl-main.75>
