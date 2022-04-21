@@ -77,6 +77,9 @@ Verlinden et al. ACL Findings'21\
 Span-based pipeline + Concat mention with attended KB candidate repr.\
 <https://aclanthology.org/2021.findings-acl.171>
 
+**Document-Level Event Argument Extraction by Conditional Generation**. Li et al. NAACL'21\
+<https://aclanthology.org/2021.naacl-main.69>
+
 **Document-level Entity-based Extraction as Template Generation**. Huang et al. EMNLP'21\
 Benefits as generation: (1)
 generation decoding captures entity dependencies (2) naturally n-ary without exponential combinations of entities.\

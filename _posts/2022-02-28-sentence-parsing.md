@@ -9,7 +9,13 @@ tags:
 
 ---
 
+Sentence-level parsing or NER.
+
 ## Task: Named Entity Recognition (NER)
+
+**A Unified Generative Framework for Various NER Subtasks**. Yan et al. ACL'21\
+S2S generation: pointer(index)-based.\
+<https://aclanthology.org/2021.acl-long.451>
 
 **Unified Named Entity Recognition as Word-Word Relation Classification**. Li et al. AAAI'22\
 Novel formulation.\
