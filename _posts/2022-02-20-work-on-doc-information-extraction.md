@@ -89,7 +89,7 @@ generation decoding captures entity dependencies (2) naturally n-ary without exp
 
 ### Separate Modules w/ Interactions
 
-**GraphRel: Model- ing Text as Relational Graphs for Joint Entity and Relation Extraction**. Fu et al. ACL'19\
+**GraphRel: Model-ing Text as Relational Graphs for Joint Entity and Relation Extraction**. Fu et al. ACL'19\
 <https://aclanthology.org/P19-1136/>
 
 **A Frustratingly Easy Approach for Entity and Relation Extraction**. Zhong and Chen. NAACL'21\

@@ -147,6 +147,10 @@ Inject by replacing entity with repr of lexical head/tail/relation and entity de
 
 ## For Analysis
 
+**Perturbed Masking: Parameter-free Probing for Analyzing and Interpreting BERT**. Wu et al. ACL'20\
+Unsupervised probing w/o training to induce sent/doc structure: obtain a matrix of perturbation impact.\
+<https://aclanthology.org/2020.acl-main.383>
+
 **SparseBERT: Rethinking the Importance Analysis in Self-attention**. Shi et al. ICML'21\
 Diagonal positions in attention map are not as important compared to other positions.\
 <https://arxiv.org/pdf/2102.12871>
